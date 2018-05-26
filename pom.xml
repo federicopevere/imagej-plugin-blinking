@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.imagej</groupId>
+		<artifactId>pom-imagej</artifactId>
+		<version>7.0.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>kth.nanoSi</groupId>
+	<artifactId>My_DotDataExtractor</artifactId>
+	<version>0.2.0-SNAPSHOT</version>
+
+	<name>plugins/My_DotDataExtractor.jar</name>
+	<description>A Maven project implementing an ImageJ 1.x blinking analysis plugin</description>
+
+	<developers>
+		<developer>
+			<id>pevere</id>
+			<name>Federico Pevere</name>
+			<email>pevere@kth.se</email>
+			<url>http://www.kth.se/profile/pevere</url>
+			<organization>KTH Royal Institute of Technology</organization>
+			<organizationUrl>http://www.kth.se/en</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/federicopevere/imagej-plugin-blinking.git</connection>
+		<developerConnection>scm:git:git@github.com:federicopevere/imagej-plugin-blinking.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/federicopevere/imagej-plugin-blinking/new/master</url>
+	</scm>
+
+	<properties>
+		<main-class>My_DotDataExtractor</main-class>
+                <imagej.app.directory>/Applications/ImageJ/</imagej.app.directory>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
+		</dependency>
+                <dependency>
+                        <groupId>org.jfree</groupId>
+                        <artifactId>jfreechart</artifactId>
+                        <version>1.0.19</version>
+                        <type>jar</type>
+                 </dependency>
+                 <dependency>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-math3</artifactId>
+                        <version>3.5</version>
+                        <type>jar</type>
+                 </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${main-class}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
